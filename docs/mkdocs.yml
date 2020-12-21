@@ -1,0 +1,85 @@
+site_name: sbi
+site_url: "https://mackelab.org/sbi/"
+
+nav:
+  - Home: index.md
+  - Installation: install.md
+  - Tutorials and Examples:
+      - Introduction:
+        - Getting started: tutorial/00_getting_started.md
+        - Amortized inference: tutorial/01_gaussian_amortized.md
+      - Advanced:
+        - Flexible interface: tutorial/02_flexible_interface.md
+        - Multi-round inference: tutorial/03_multiround_inference.md
+        - Custom density estimators: tutorial/04_density_estimators.md
+        - Learning summary statistics: tutorial/05_embedding_net.md
+        - Conditional distributions: tutorial/07_conditional_distributions.md
+      - Examples:
+        - Hodgkin-Huxley example: examples/00_HH_simulator.md
+  - Contribute: contribute.md
+  - API Reference: reference.md
+  - FAQ: faq.md
+  - Credits: credits.md
+
+repo_name: 'mackelab/sbi'
+repo_url: http://github.com/mackelab/sbi
+
+theme:
+  name: 'material'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  logo: 'static/logo.svg'
+  collapse_navigation: False
+
+extra:
+  social:
+    - icon: 'fontawesome/brands/github-alt'
+      link: 'https://github.com/mackelab/sbi'
+
+markdown_extensions:
+  - extra
+  - smarty
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - markdown_include.include:
+      base_path: ../
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          rendering:
+            show_source: true
+            heading_level: 3
+      watch:
+        - ../sbi
+
+extra_javascript:
+  - 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'
+
+extra_css:
+  - 'static/global.css'
